@@ -13,8 +13,9 @@ use App\User;
 |
 */
 
-// Route::get('/', 'WelcomeController@index');
-Route::get('/', function() {
+Route::get('/', 'WelcomeController@index');
+
+Route::get('/users', function() {
     return User::all();
 });
 
