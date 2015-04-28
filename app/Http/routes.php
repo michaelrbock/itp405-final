@@ -15,6 +15,9 @@ use App\User;
 
 Route::get('/', 'WelcomeController@index');
 
+Route::get('/signup', 'LoginController@signup');
+Route::post('/signup', 'LoginController@processSignup');
+
 Route::get('/users', function() {
     return User::all();
 });
