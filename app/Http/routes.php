@@ -15,14 +15,11 @@ use App\User;
 
 Route::get('/', 'WelcomeController@index');
 
-Route::get('/signup', 'LoginController@signup');
-Route::post('/signup', 'LoginController@processSignup');
-
 Route::get('/users', function() {
     return User::all();
 });
 
-Route::get('home', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

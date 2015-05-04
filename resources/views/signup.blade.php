@@ -3,12 +3,15 @@
 @section('title', 'Signup')
 
 @section('content')
-    <div class="container">
-        <div class="row" style="margin-top: 60px;"><div class="col-xs-12">
-            <h2 class="text-center">Signup</h2>
-        </div></div>
-        <div class="row intro-header" style="margin-top: 10px; background: url(../img/longex.jpg) no-repeat center center;">
-            <div class="col-xs-6 col-xs-offset-3">
+    <div class="row intro-header" style="margin-top: 10px;
+                background: url(../img/longex.jpg) no-repeat center center;
+                padding-bottom: 300px;">
+        <div class="container">
+            <div class="row">
+                <h1 class="text-center">Signup</h1>
+                <br>
+            </div>
+            <div class="col-lg-6 col-lg-offset-3">
                 <form action="/signup" method="post">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
@@ -19,16 +22,16 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Don Draper">
+                    </div>
+                    <div class="form-group">
                         <label for="email">Email address</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="don@scdp.com">
                     </div>
                     <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" id="firstName" name="first_name" placeholder="Don">
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Draper">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password">
                     </div>
                     <div class="form-group" style="margin-top: 20px;">
                         <button  type="submit" class="btn btn-default">
@@ -37,6 +40,6 @@
                     </div>
                 </form>
             </div>
-        </div> <!-- /.row -->
-    </div> <!-- /.container -->
+        </div>
+    </div> <!-- /.row intro-header -->
 @stop

@@ -14,7 +14,7 @@
 
 	<!-- Custom Fonts -->
 	<link href="{{ asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+	<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,12 +43,18 @@
 					<li>
 						<a href="/">About</a>
 					</li>
+					@if (Auth::check() === false)
 					<li>
-						<a href="/">Login</a>
+						<a href="/auth/login">Login</a>
 					</li>
 					<li>
-						<a href="/signup">Signup</a>
+						<a href="/auth/register">Signup</a>
 					</li>
+					@else
+					<li>
+						<a href="/auth/logout">Logout</a>
+					</li>
+					@endif
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -58,6 +64,33 @@
 
 	@yield('content')
 
+	<!-- Footer -->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<ul class="list-inline">
+						<li>
+							<a href="#">Home</a>
+						</li>
+						<li class="footer-menu-divider">&sdot;</li>
+						<li>
+							<a href="#about">About</a>
+						</li>
+						<li class="footer-menu-divider">&sdot;</li>
+						<li>
+							<a href="#services">Services</a>
+						</li>
+						<li class="footer-menu-divider">&sdot;</li>
+						<li>
+							<a href="#contact">Contact</a>
+						</li>
+					</ul>
+					<p class="copyright text-muted small">Copyright &copy; Arctic Ads 2015. All Rights Reserved</p>
+				</div>
+			</div>
+		</div>
+	</footer>
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
