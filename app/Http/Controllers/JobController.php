@@ -16,7 +16,7 @@ class JobController extends Controller {
             $job->title = $request->input('title');
             $job->content_url = $request->input('content_url');
             $job->description = $request->input('description');
-            $job->creator_id = $request->input('creator_id');
+            $job->user_id = $request->input('user_id');
             $job->save();
 
             return redirect('/advertiser')

@@ -11,7 +11,7 @@ class Job extends Model {
         return $validation = Validator::make($input, [
             'title' => 'required',
             'content_url' => 'required|active_url|url',
-            'creator_id' => 'required|integer'
+            'user_id' => 'required|integer'
         ]);
     }
 
