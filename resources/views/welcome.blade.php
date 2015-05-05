@@ -16,10 +16,10 @@
 						<hr class="intro-divider">
 						<ul class="list-inline intro-social-buttons">
 							<li>
-								<a href="/signup?type=blogger" class="btn btn-default btn-lg"><i class="fa fa-angle-double-left fa-fw"></i><span class="network-name">I am a publisher</span></a>
+								<a href="/auth/register?type=blogger" class="btn btn-default btn-lg"><i class="fa fa-angle-double-left fa-fw"></i><span class="network-name">I am a blogger</span></a>
 							</li>
 							<li>
-								<a href="/signup?type=advertiser" class="btn btn-default btn-lg"><span class="network-name">I am an advertiser</span><i class="fa fa-angle-double-right fa-fw"></i></a>
+								<a href="/auth/register?type=advertiser" class="btn btn-default btn-lg"><span class="network-name">I am an advertiser</span><i class="fa fa-angle-double-right fa-fw"></i></a>
 							</li>
 						</ul>
 					</div>

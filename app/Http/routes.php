@@ -1,6 +1,7 @@
 <?php
 
 use App\User;
+use App\Models\Job;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +16,12 @@ use App\User;
 
 Route::get('/', 'WelcomeController@index');
 
-Route::get('/users', function() {
-    return User::all();
-});
-
 Route::get('/home', 'HomeController@index');
+Route::get('/blogger', 'BloggerController@index');
+Route::get('/advertiser', 'AdvertiserController@index');
+
+Route::post('/jobs', 'JobController@addJob');
+Route::get('/jobs/{id}', 'JobController@detail');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

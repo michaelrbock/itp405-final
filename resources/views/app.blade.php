@@ -44,16 +44,16 @@
 						<a href="/">About</a>
 					</li>
 					@if (Auth::check() === false)
-					<li>
-						<a href="/auth/login">Login</a>
-					</li>
-					<li>
-						<a href="/auth/register">Signup</a>
-					</li>
+						<li>
+							<a href="/auth/login">Login</a>
+						</li>
+						<li>
+							<a href="/auth/register">Signup</a>
+						</li>
 					@else
-					<li>
-						<a href="/auth/logout">Logout</a>
-					</li>
+						<li>
+							<a href="/auth/logout">Logout</a>
+						</li>
 					@endif
 				</ul>
 			</div>
@@ -71,7 +71,7 @@
 				<div class="col-lg-12">
 					<ul class="list-inline">
 						<li>
-							<a href="#">Home</a>
+							<a href="/">Home</a>
 						</li>
 						<li class="footer-menu-divider">&sdot;</li>
 						<li>
