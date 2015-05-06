@@ -9,6 +9,7 @@ class AdvertiserController extends Controller {
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('advertiser');
     }
 
     public function index(Request $request)

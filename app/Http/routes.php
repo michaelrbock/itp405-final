@@ -19,6 +19,7 @@ Route::get('/', 'WelcomeController@index');
 Route::get('/home', 'HomeController@index');
 Route::get('/blogger', 'BloggerController@index');
 Route::get('/advertiser', 'AdvertiserController@index');
+Route::get('/admin', 'AdminController@index');
 
 Route::post('/jobs', 'JobController@addJob');
 Route::get('/jobs/{id}/content', 'JobController@viewDetail');

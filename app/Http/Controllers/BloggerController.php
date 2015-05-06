@@ -9,6 +9,7 @@ class BloggerController extends Controller {
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('blogger');
     }
 
     public function index(Request $request)

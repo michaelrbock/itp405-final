@@ -24,7 +24,7 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label" for="email">E-Mail Address</label>
 							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}" placeholder="or username">
+								<input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}">
 							</div>
 						</div>
 

@@ -10,7 +10,8 @@
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
 		"phpspec/phpspec": "~2.1",
-		"heroku/heroku-buildpack-php": "dev-master"
+		"heroku/heroku-buildpack-php": "dev-master",
+		"mockery/mockery": "0.9.4"
 	},
 	"autoload": {
 		"classmap": [
