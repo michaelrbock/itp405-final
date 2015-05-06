@@ -3,6 +3,8 @@
 use App\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
+use App\Models\Advertiser;
+use App\Models\Blogger;
 
 class Registrar implements RegistrarContract {
 
@@ -30,12 +32,33 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
-		return User::create([
-			'type' => $data['type'],
-			'name' => $data['name'],
-			'email' => $data['email'],
-			'password' => bcrypt($data['password']),
-		]);
+		$user = new User();
+
+		if ($data['type'] == '?type=advertiser') {
+			$additonal = Advertiser::create([
+				'name' => $data['additional_name'],
+				'website' => $data['website']
+			]);
+			$user->advertiser_id = $additonal->id;
+			$user->type = 'advertiser';
+		} else if ($data['type'] == '?type=blogger') {
+			$additonal = Blogger::create([
+				'name' => $data['additional_name'],
+				'website' => $data['website']
+			]);
+			$user->blogger_id = $additonal->id;
+			$user->type = 'blogger';
+		}
+
+		$user->name = $data['name'];
+		$user->email = $data['email'];
+		$user->password = bcrypt($data['password']);
+		$user->save();
+
+		$additonal->user_id = $user->id;
+		$additonal->save();
+
+		return $user;
 	}
 
 }

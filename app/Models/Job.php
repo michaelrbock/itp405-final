@@ -11,13 +11,18 @@ class Job extends Model {
         return $validation = Validator::make($input, [
             'title' => 'required',
             'content_url' => 'required|active_url|url',
-            'user_id' => 'required|integer'
+            'advertiser_id' => 'required|integer'
         ]);
     }
 
-    public function user()
+    public function advertiser()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Models\Advertiser');
+    }
+
+    public function blogger()
+    {
+        return $this->belongsTo('App\Models\Blogger');
     }
 
 }

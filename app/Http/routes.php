@@ -22,6 +22,7 @@ Route::get('/advertiser', 'AdvertiserController@index');
 
 Route::post('/jobs', 'JobController@addJob');
 Route::get('/jobs/{id}', 'JobController@detail');
+Route::get('/jobs/{id}/accept', 'BloggerController@acceptJob');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

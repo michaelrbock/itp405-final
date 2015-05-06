@@ -13,11 +13,25 @@ class BloggerController extends Controller {
 
     public function index(Request $request)
     {
-        $jobs = Job::with('user')->where('status', '=', 'new')->get();
+        $current_jobs = Job::with('advertiser')
+            ->where('blogger_id', '=', $request->user()->blogger_id)->get();
+        $available_jobs = Job::with('advertiser')->where('status', '=', 'new')->get();
 
         return view('blogger', [
-            'jobs' => $jobs
+            'current_jobs' => $current_jobs,
+            'available_jobs' => $available_jobs
         ]);
+    }
+
+    public function acceptJob(Request $request, $id)
+    {
+        $job = Job::find($id);
+
+        $job->status = 'taken';
+        $job->blogger_id = $request->user()->blogger_id;
+        $job->save();
+
+        return redirect('/blogger');
     }
 
 }

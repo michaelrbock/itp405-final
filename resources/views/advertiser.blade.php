@@ -25,7 +25,7 @@
                         <div class="alert alert-success" role="alert">
                             <strong>Success!</strong> {{ Session::get('success') }}<br>
                             <ul>
-                                <li>Your add will be matched with our bloggers to be posted!</li>
+                                <li>Your ad will be matched with our bloggers to be posted!</li>
                             </ul>
                         </div>
                     @endif
@@ -57,7 +57,7 @@
                             </div>
                         </div>
 
-                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                        <input type="hidden" name="advertiser_id" value="{{ Auth::user()->advertiser->id }}">
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
@@ -81,14 +81,16 @@
                             <td>URL of Content</td>
                             <td>Description/Keywords</td>
                             <td>Status</td>
+                            <td></td>
                         </tr></thead>
                         <tbody>
                         @foreach ($jobs as $job)
                             <tr>
-                                <td><a href="/jobs/{{ $job->id }}">{{ $job->title }}</a></td>
+                                <td>{{ $job->title }}</td>
                                 <td>{{ $job->content_url }}</td>
                                 <td>{{ $job->description }}</td>
                                 <td>{{ $job->status }}</td>
+                                <td><a class="btn btn-default" role="button" href="/jobs/{{ $job->id }}">Preview Content</a></td>
                             </tr>
                         @endforeach
                         </tbody>

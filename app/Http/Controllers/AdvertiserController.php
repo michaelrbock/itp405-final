@@ -13,7 +13,7 @@ class AdvertiserController extends Controller {
 
     public function index(Request $request)
     {
-        $jobs = Job::where('user_id', '=', $request->user()->id)->get();
+        $jobs = Job::where('advertiser_id', '=', $request->user()->advertiser_id)->get();
 
         return view('advertiser', [
             'jobs' => $jobs

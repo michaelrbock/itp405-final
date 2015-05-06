@@ -23,9 +23,13 @@
                     @endif
                     <p>
                         Word count: <small>{{ $content->word_count }}</small>
+                    </p>
+                    Excerpt:
                     <p class="lead">
                         {{ $content->excerpt }}
                     </p>
+                    Full HTML:
+                    <pre>{{ $content->content }}</pre>
                 </div>
             </div>
         </div>

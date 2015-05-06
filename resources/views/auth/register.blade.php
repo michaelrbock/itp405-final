@@ -24,9 +24,10 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label" for="type">Type</label>
 							<div class="col-md-6">
-								<select class="form-control" name="type" id="type">
-									<option value="blogger" @if (Request::input('type') == 'blogger') selected @endif>Blogger</option>
-									<option value="advertiser" @if (Request::input('type') == 'advertiser') selected @endif>Advertiser</option>
+								<select class="form-control" name="type" id="type"
+								 onchange="javascript:location.href = this.value;">
+									<option value="?type=blogger" @if (Request::input('type') == 'blogger') selected @endif>Blogger</option>
+									<option value="?type=advertiser" @if (Request::input('type') == 'advertiser') selected @endif>Advertiser</option>
 								</select>
 							</div>
 						</div>
@@ -37,6 +38,27 @@
 								<input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}"
 								 @if (Request::input('type') == 'blogger') placeholder="ex: John Gruber" @endif
 								 @if (Request::input('type') == 'advertiser') placeholder="ex: Don Draper" @endif>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="additional_name">
+								@if (Request::input('type') == 'blogger') Blog Name @endif
+								@if (Request::input('type') == 'advertiser') Company/Agency Name @endif
+							</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="additional_name" id="additional_name" value="{{ old('additional_name') }}"
+								 @if (Request::input('type') == 'blogger') placeholder="ex: Daring Fireball" @endif
+								 @if (Request::input('type') == 'advertiser') placeholder="ex: Sterling Cooper Draper Pryce" @endif>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 control-label" for="website">Website</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" name="website" id="website" value="{{ old('website') }}"
+								 @if (Request::input('type') == 'blogger') placeholder="ex: http://daringfireball.net" @endif
+								 @if (Request::input('type') == 'advertiser') placeholder="ex: http://scdp.com" @endif>
 							</div>
 						</div>
 
