@@ -10,7 +10,9 @@ class Job extends Model {
     {
         return $validation = Validator::make($input, [
             'title' => 'required',
-            'content_url' => 'required|active_url|url',
+            'content_url' => 'required|url',
+            'description' => 'required',
+            'budget' => 'required|integer|min:1',
             'advertiser_id' => 'required|integer'
         ]);
     }

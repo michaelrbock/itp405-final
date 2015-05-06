@@ -43,8 +43,9 @@
 
 						<div class="form-group">
 							<label class="col-md-4 control-label" for="additional_name">
-								@if (Request::input('type') == 'blogger') Blog Name @endif
-								@if (Request::input('type') == 'advertiser') Company/Agency Name @endif
+								@if (Request::input('type') == 'blogger') Blog Name
+								@elseif (Request::input('type') == 'advertiser') Company/Agency Name
+								@else Company Name @endif
 							</label>
 							<div class="col-md-6">
 								<input type="text" class="form-control" name="additional_name" id="additional_name" value="{{ old('additional_name') }}"

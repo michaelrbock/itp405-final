@@ -23,9 +23,9 @@
 
                     @if (Session::has('success'))
                         <div class="alert alert-success" role="alert">
-                            <strong>Success!</strong> {{ Session::get('success') }}<br>
+                            <strong>Success!</strong><br>
                             <ul>
-                                <li>Your ad will be matched with our bloggers to be posted!</li>
+                                <li>{{ Session::get('success') }}</li>
                             </ul>
                         </div>
                     @endif
@@ -57,6 +57,14 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="budget">Budget (USD)</label>
+                            <div class="col-md-6">
+                                <input type="number" class="form-control" name="budget" id="budget" value="{{ old('budget') }}"
+                                 placeholder="$1000">
+                            </div>
+                        </div>
+
                         <input type="hidden" name="advertiser_id" value="{{ Auth::user()->advertiser->id }}">
 
                         <div class="form-group">
@@ -75,22 +83,47 @@
                 <div class="panel-heading">Current Ads</div>
 
                 <div class="panel-body">
-                    <table class="table table-striped">
+                    <table class="table table-hover">
                         <thead><tr>
                             <td>Title</td>
-                            <td>URL of Content</td>
                             <td>Description/Keywords</td>
+                            <td>Budget</td>
+                            <td></td>
                             <td>Status</td>
                             <td></td>
                         </tr></thead>
                         <tbody>
                         @foreach ($jobs as $job)
-                            <tr>
+                            <tr @if ($job->status == 'bid') class="success"
+                             @elseif ($job->status == 'completed') class="info"
+                             @elseif ($job->status == 'accepted') class="warning" @endif>
                                 <td>{{ $job->title }}</td>
-                                <td>{{ $job->content_url }}</td>
                                 <td>{{ $job->description }}</td>
-                                <td>{{ $job->status }}</td>
-                                <td><a class="btn btn-default" role="button" href="/jobs/{{ $job->id }}">Preview Content</a></td>
+                                <td>${{ $job->budget }}</td>
+                                <td><a class="btn btn-default" role="button" href="/jobs/{{ $job->id }}/content">Preview Content</a></td>
+                                <td>
+                                    @if ($job->status == 'bid')
+                                        <a class="btn btn-success" role="button" href="/jobs/{{ $job->id }}/bid">View ${{ $job->bid }} Bid</a>
+                                    @else
+                                        {{ $job->status }}
+                                    @endif
+                                </td>
+                                @if ($job->status == 'bid')
+                                    <form class="form" role="form" method="POST" action="{{ url('/jobs/' . $job->id . '/accept') }}">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <td><input type="submit" class="btn btn-primary" value="Accept Bid"></td>
+                                    </form>
+                                    <form class="form" role="form" method="POST" action="{{ url('/jobs/' . $job->id . '/reject') }}">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <td><input type="submit" class="btn btn-danger" value="Reject Bid"></td>
+                                    </form>
+                                @elseif ($job->status == 'new')
+                                    <td>Waiting for Bid</td>
+                                    <td></td>
+                                @else
+                                    <td><a class="btn btn-default" role="button" href="/jobs/{{ $job->id }}/bid">View ${{ $job->bid }} Job</a></td>
+                                    <td></td>
+                                @endif
                             </tr>
                         @endforeach
                         </tbody>

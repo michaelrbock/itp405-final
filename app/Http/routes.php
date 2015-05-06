@@ -21,8 +21,12 @@ Route::get('/blogger', 'BloggerController@index');
 Route::get('/advertiser', 'AdvertiserController@index');
 
 Route::post('/jobs', 'JobController@addJob');
-Route::get('/jobs/{id}', 'JobController@detail');
-Route::get('/jobs/{id}/accept', 'BloggerController@acceptJob');
+Route::get('/jobs/{id}/content', 'JobController@viewDetail');
+Route::get('/jobs/{id}/bid', 'JobController@viewBid');
+Route::post('/jobs/{id}/bid', 'BloggerController@bidJob');
+Route::post('/jobs/{id}/accept', 'AdvertiserController@acceptJob');
+Route::post('/jobs/{id}/reject', 'AdvertiserController@rejectJob');
+Route::post('/jobs/{id}/complete', 'BloggerController@completeJob');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

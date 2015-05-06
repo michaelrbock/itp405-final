@@ -36,6 +36,8 @@ class HomeController extends Controller {
 			return redirect('/blogger');
 		} else if ($request->user()->type == 'advertiser') {
 			return redirect('/advertiser');
+		} else if ($request->user()->type == 'admin') {
+			return redirect('/admin');
 		}
 		return view('home');
 	}

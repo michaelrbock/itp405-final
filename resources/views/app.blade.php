@@ -40,9 +40,6 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li>
-						<a href="/">About</a>
-					</li>
 					@if (Auth::check() === false)
 						<li>
 							<a href="/auth/login">Login</a>
@@ -75,15 +72,7 @@
 						</li>
 						<li class="footer-menu-divider">&sdot;</li>
 						<li>
-							<a href="#about">About</a>
-						</li>
-						<li class="footer-menu-divider">&sdot;</li>
-						<li>
-							<a href="#services">Services</a>
-						</li>
-						<li class="footer-menu-divider">&sdot;</li>
-						<li>
-							<a href="#contact">Contact</a>
+							<a href="/">About</a>
 						</li>
 					</ul>
 					<p class="copyright text-muted small">Copyright &copy; Arctic Ads 2015. All Rights Reserved</p>
@@ -94,5 +83,6 @@
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	@yield('scripts')
 </body>
 </html>

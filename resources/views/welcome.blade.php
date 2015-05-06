@@ -22,6 +22,8 @@
 								<a href="/auth/register?type=advertiser" class="btn btn-default btn-lg"><span class="network-name">I am an advertiser</span><i class="fa fa-angle-double-right fa-fw"></i></a>
 							</li>
 						</ul>
+						<br>
+						<h4>Read below for more info on how it works</h4>
 					</div>
 				</div>
 			</div>
@@ -42,11 +44,16 @@
 				<div class="col-lg-5 col-sm-6">
 					<hr class="section-heading-spacer">
 					<div class="clearfix"></div>
-					<h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
-					<p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
+					<h2 class="section-heading">
+						Bloggers, make money<br>by posting sponsored content
+					</h2>
+					<p class="lead">
+						Bloggers &amp; publishers of all size can now make money by posting content sponsored
+						by companies and advertising agencies.
+					</p>
 				</div>
 				<div class="col-lg-5 col-lg-offset-2 col-sm-6">
-					<img class="img-responsive" src="img/ipad.png" alt="">
+					<img class="img-responsive" src="img/night-square.jpg" alt="">
 				</div>
 			</div>
 
@@ -64,11 +71,13 @@
 				<div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
 					<hr class="section-heading-spacer">
 					<div class="clearfix"></div>
-					<h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-					<p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
+					<h2 class="section-heading">Advertisers &amp; Companies,<br>reach the right people</h2>
+					<p class="lead">
+						By using Arctic, advertisers and companies can reach the right audience using sponsored posts for a fraction of the cost.
+					</p>
 				</div>
 				<div class="col-lg-5 col-sm-pull-6  col-sm-6">
-					<img class="img-responsive" src="img/dog.png" alt="">
+					<img class="img-responsive" src="img/people.jpg" alt="">
 				</div>
 			</div>
 
@@ -86,11 +95,13 @@
 				<div class="col-lg-5 col-sm-6">
 					<hr class="section-heading-spacer">
 					<div class="clearfix"></div>
-					<h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-					<p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+					<h2 class="section-heading">Bloggers and Advertiser<br>Use Arctic to connect</h2>
+					<p class="lead">
+						Arctic makes it easy for bloggers and advertisers to connect to sponsored and run contnet.
+					</p>
 				</div>
 				<div class="col-lg-5 col-lg-offset-2 col-sm-6">
-					<img class="img-responsive" src="img/phones.png" alt="">
+					<img class="img-responsive" src="img/mag.jpg" alt="">
 				</div>
 			</div>
 
@@ -107,18 +118,15 @@
 
 			<div class="row">
 				<div class="col-lg-6">
-					<h2>Connect to Start Bootstrap:</h2>
+					<h2>Connect to Start Advertising and Making Money</h2>
 				</div>
 				<div class="col-lg-6">
 					<ul class="list-inline banner-social-buttons">
 						<li>
-							<a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+							<a href="/auth/register?type=blogger" class="btn btn-default btn-lg"><span class="network-name">Sign up as a blogger</span></a>
 						</li>
 						<li>
-							<a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-						</li>
-						<li>
-							<a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+							<a href="/auth/register?type=advertiser" class="btn btn-default btn-lg"><span class="network-name">Sign up as an advertiser</span></a>
 						</li>
 					</ul>
 				</div>
