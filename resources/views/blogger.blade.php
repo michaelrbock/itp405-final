@@ -101,7 +101,7 @@
                                 <td>{{ $job->status }}</td>
                                 <form class="form" role="form" method="POST" action="{{ url('/jobs/' . $job->id . '/bid') }}">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    <td><input type="number" name="bid" class="form-control"></td>
+                                    <td><input type="number" name="bid" class="form-control" style="width: 70px;"></td>
                                     <td><input type="submit" class="btn btn-primary" value="Bid for Job"></td>
                                 </form>
                             </tr>
