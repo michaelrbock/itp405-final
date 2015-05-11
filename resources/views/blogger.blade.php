@@ -50,7 +50,7 @@
                                 <td>{{ $job->description }}</td>
                                 <td>${{ $job->budget }}</td>
                                 <td>{{ $job->status }} @if ($job->status == 'bid') ${{ $job->bid }} @endif</td>
-                                <td><a class="btn btn-default" role="button" href="/jobs/{{ $job->id }}">Preview Content</a></td>
+                                <td><a class="btn btn-default" role="button" href="/jobs/{{ $job->id }}/content">Preview Content</a></td>
                                 @if ($job->status == 'accepted')
                                     <form class="form" role="form" method="POST" action="{{ url('/jobs/' . $job->id . '/complete') }}">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
