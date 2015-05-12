@@ -16,7 +16,12 @@ class BloggerController extends Controller {
     {
         $current_jobs = Job::with('advertiser')
             ->where('blogger_id', '=', $request->user()->blogger_id)
-            ->whereRaw("status = 'bid' OR status = 'accepted' OR status = 'completed'")
+            ->where(function($query) {
+                $query->where('status', '=', 'bid')
+                      ->orWhere('status', '=', 'accepted')
+                      ->orWhere('status', '=', 'completed');
+            })
+            // ->whereRaw("status = 'bid' OR status = 'accepted' OR status = 'completed'")
             ->get();
         $available_jobs = Job::with('advertiser')->where('status', '=', 'new')->get();
 
